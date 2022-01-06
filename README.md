@@ -1,2 +1,2 @@
-# sa_devops_app - DevOps App
-> App for DevOps Model
+# DevOps Model App 
+> Simple application to serve as reference for the BTP Solution Architects DevOps Model
