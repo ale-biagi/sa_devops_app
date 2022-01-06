@@ -27,7 +27,7 @@ stages:
     cfSpace: "dev"
     cfAppName: "sa-devops-app"
     cfCredentialsId: "deploy-to-cf"
-    tmsUpload: false
+    tmsUpload: true
 
 steps:
   artifactPrepareVersion:
