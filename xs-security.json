@@ -1,5 +1,5 @@
 {
-    "xsappname": "sa_devops_app",
+    "xsappname": "sa-devops-app",
     "tenant-mode": "dedicated",
     "scopes": [
         {

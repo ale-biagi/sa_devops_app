@@ -1,7 +1,7 @@
 {
     "_version": "",
     "sap.app": {
-        "id": "sa_devops_app-fiori",
+        "id": "sa-devops-app-fiori",
         "type": "application",
         "i18n": "i18n/i18n.properties",
         "applicationVersion": {

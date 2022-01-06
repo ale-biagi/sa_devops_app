@@ -1,5 +1,5 @@
 {
-  "name": "sa_devops_app",
+  "name": "sa-devops-app",
   "version": "0.0.1",
   "repository": "<Add your repository here>",
   "license": "UNLICENSED",
@@ -74,7 +74,7 @@
         "impl": "srv/external/NearEarthObjectWebService.js",
         "credentials": {
           "[production]": {
-            "destination": "sa_devops_app-NASA-api",
+            "destination": "sa-devops-app-NASA-api",
             "path": "neo/rest/v1"
           },
           "[development]": {

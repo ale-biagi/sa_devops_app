@@ -16,7 +16,7 @@ stages:
     cfApiEndpoint: "https://api.cf.eu10.hana.ondemand.com"
     cfOrg: "sa-devops-dev"
     cfSpace: "dev"
-    cfAppName: "sa_devops_app"
+    cfAppName: "sa-devops-app"
     cfCredentialsId: "deploy-to-cf"
     uiVeri5ExecuteTests: false
 
@@ -25,7 +25,7 @@ stages:
     cfApiEndpoint: "https://api.cf.eu10.hana.ondemand.com"
     cfOrg: "sa-devops-dev"
     cfSpace: "dev"
-    cfAppName: "sa_devops_app"
+    cfAppName: "sa-devops-app"
     cfCredentialsId: "deploy-to-cf"
     tmsUpload: false
 

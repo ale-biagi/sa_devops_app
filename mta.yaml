@@ -1,5 +1,5 @@
 _schema-version: '3.2'
-ID: sa_devops_app
+ID: sa-devops-app
 version: 0.0.1
 
 parameters:
@@ -16,7 +16,7 @@ build-parameters:
 
 modules:
   # ---------------- DATABASE DEPLOYER MODULE ------------------
-  - name: sa_devops_app-db-deployer
+  - name: sa-devops-app-db-deployer
   # ------------------------------------------------------------
     type: hdb
     path: gen/db
@@ -25,11 +25,11 @@ modules:
       memory: 256M
       disk-quota: 1024M
     requires:
-      - name: sa_devops_app-uaa
-      - name: sa_devops_app-db
+      - name: sa-devops-app-uaa
+      - name: sa-devops-app-db
 
   # --------------------- SERVER MODULE ------------------------
-  - name: sa_devops_app-srv
+  - name: sa-devops-app-srv
   # ------------------------------------------------------------
     type: nodejs
     path: gen/srv
@@ -40,9 +40,9 @@ modules:
     properties:
       APIKeyNASA: DEMO_KEY
     requires:
-      - name: sa_devops_app-uaa
-      - name: sa_devops_app-dest
-      - name: sa_devops_app-db
+      - name: sa-devops-app-uaa
+      - name: sa-devops-app-dest
+      - name: sa-devops-app-db
     provides:
       - name: srv-api
         properties:
@@ -50,7 +50,7 @@ modules:
 
 
   # ------------------ APP ROUTER MODULE -----------------------
-  - name: sa_devops_app
+  - name: sa-devops-app
   # ------------------------------------------------------------
     type: approuter.nodejs
     path: app
@@ -58,7 +58,7 @@ modules:
       memory: 256M
       disk-quota: 1024M
     requires:
-      - name: sa_devops_app-uaa
+      - name: sa-devops-app-uaa
       - name: srv-api
         group: destinations
         properties:
@@ -70,7 +70,7 @@ modules:
 
 resources:
   # ----------------------- UAA SERVICE ------------------------
-  - name: sa_devops_app-uaa
+  - name: sa-devops-app-uaa
   # ------------------------------------------------------------
     type: org.cloudfoundry.managed-service
     parameters:
@@ -79,7 +79,7 @@ resources:
       path: ./xs-security.json
 
   # -------------------- DESTINATION SERVICE -------------------
-  - name: sa_devops_app-dest
+  - name: sa-devops-app-dest
   # ------------------------------------------------------------
     type: org.cloudfoundry.managed-service
     parameters:
@@ -90,7 +90,7 @@ resources:
           instance:
             existing_destinations_policy: update
             destinations:
-              - Name: sa_devops_app-NASA-api
+              - Name: sa-devops-app-NASA-api
                 Description: NASA APIs
                 URL: https://api.nasa.gov
                 Type: HTTP
@@ -101,7 +101,7 @@ resources:
 
 
   # ------------------- HDI CONTAINER SERVICE ------------------
-  - name: sa_devops_app-db
+  - name: sa-devops-app-db
   # ------------------------------------------------------------
     type: com.sap.xs.hdi-container
     parameters:
