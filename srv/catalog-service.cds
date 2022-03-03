@@ -65,6 +65,6 @@ service CatalogService @(path : '/catalog')
       as projection on NearEarthObjectWebService.Feed;
 
     type userScopes { identified: Boolean; authenticated: Boolean; Viewer: Boolean; Admin: Boolean; };
-    type user { user: String; locale: String; scopes: userScopes; };
+    type user { user: String; locale: String; scopes: userScopes; fullinfo: String; };
     function userInfo() returns user;
 };

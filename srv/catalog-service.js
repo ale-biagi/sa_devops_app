@@ -78,7 +78,7 @@ module.exports = cds.service.impl(async function () {
     this.on('userInfo', req => {
         let results = {};
         results.user = req.user.id;
-        if (req.user.hasOwnProperty('locale')) {
+        if (req.user.locale) {
             results.locale = req.user.locale;
         }
         results.scopes = {};
@@ -86,6 +86,7 @@ module.exports = cds.service.impl(async function () {
         results.scopes.authenticated = req.user.is('authenticated-user');
         results.scopes.Viewer = req.user.is('Viewer');
         results.scopes.Admin = req.user.is('Admin');
+        results.fullinfo = req.user;
         return results;
     });
 
