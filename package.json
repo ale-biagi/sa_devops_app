@@ -67,8 +67,7 @@
           "db",
           "srv"
         ]
-      }
-        ,
+      },
       "NearEarthObjectWebService": {
         "kind": "rest",
         "impl": "srv/external/NearEarthObjectWebService.js",
@@ -81,9 +80,15 @@
             "url": "https://api.nasa.gov/neo/rest/v1"
           }
         }
+      },
+      "xsuaa_api": {
+        "kind": "rest",
+        "credentials": {
+            "destination": "xsuaa_api",
+            "path": "/userinfo"
+        }
       }
-    }
-    ,
+    },
     "hana": {
       "deploy-format": "hdbtable"
     }

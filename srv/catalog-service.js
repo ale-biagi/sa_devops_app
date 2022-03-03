@@ -3,6 +3,7 @@ const debug = require('debug')('srv:catalog-service');
 module.exports = cds.service.impl(async function () {
 
     const NeoWs = await cds.connect.to('NearEarthObjectWebService');
+    const xsuaa = await cds.connect.to('xsuaa_api');
 
     const {
             Sales
@@ -90,4 +91,8 @@ module.exports = cds.service.impl(async function () {
         return results;
     });
 
+    this.on('userInfo2', async (req) => {
+        console.log(req.user);
+        return await xsuaa.get("/");
+    });
 });

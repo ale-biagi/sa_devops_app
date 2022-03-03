@@ -67,4 +67,5 @@ service CatalogService @(path : '/catalog')
     type userScopes { identified: Boolean; authenticated: Boolean; Viewer: Boolean; Admin: Boolean; };
     type user { user: String; locale: String; scopes: userScopes; fullinfo: String; };
     function userInfo() returns user;
+    function userInfo2() returns String;
 };
