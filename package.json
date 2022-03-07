@@ -87,6 +87,20 @@
             "destination": "xsuaa_api",
             "path": "/userinfo"
         }
+      },
+      "xsuaa_user_mgmt": {
+        "kind": "rest",
+        "credentials": {
+            "destination": "xsuaa_mgmt",
+            "path": "/Users"
+        }
+      },
+      "xsuaa_group_mgmt": {
+        "kind": "rest",
+        "credentials": {
+            "destination": "xsuaa_mgmt",
+            "path": "/Groups"
+        }
       }
     },
     "hana": {

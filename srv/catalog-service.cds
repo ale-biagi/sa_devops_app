@@ -68,4 +68,7 @@ service CatalogService @(path : '/catalog')
     type user { user: String; locale: String; scopes: userScopes; fullinfo: String; };
     function userInfo() returns user;
     function userInfo2() returns String;
+
+    function listUsers() returns String;
+    function listGroups() returns String;
 };

@@ -4,6 +4,8 @@ module.exports = cds.service.impl(async function () {
 
     const NeoWs = await cds.connect.to('NearEarthObjectWebService');
     const xsuaa = await cds.connect.to('xsuaa_api');
+    const xsuaa2 = await cds.connect.to('xsuaa_user_mgmt');
+    const xsuaa3 = await cds.connect.to('xsuaa_group_mgmt');
 
     const {
             Sales
@@ -94,5 +96,15 @@ module.exports = cds.service.impl(async function () {
     this.on('userInfo2', async (req) => {
         console.log(req.user);
         return await xsuaa.get("/");
+    });
+
+    this.on('listUsers', async (req) => {
+        console.log(req.user);
+        return await xsuaa2.get("/"); 
+    });
+
+    this.on('listGroups', async (req) => {
+        console.log(req.user);
+        return await xsuaa3.get("/"); 
     });
 });
