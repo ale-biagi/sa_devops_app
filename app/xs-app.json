@@ -3,22 +3,22 @@
     "authenticationMethod": "route",
     "routes": [
         {
-            "source": "^/catalog/(.*)$",
+            "source": "/catalog/(.*)",
+            "destination": "srv-api",
+            "csrfProtection": true,
             "authenticationType": "xsuaa",
-            "scope": "$XSAPPNAME.Viewer",
-            "destination": "srv"
-        }
-        ,
-        {
-            "source": "^/(.*)$",
-            "authenticationType": "xsuaa",
-            "scope": "$XSAPPNAME.Viewer",
-            "localDir": "resources"
+            "scope": "$XSAPPNAME.Viewer"
         },
         {
             "source": "^/user-api(.*)",
             "target": "$1",
             "service": "sap-approuter-userapi"
+        }, 
+        {
+            "source": "/(.*)",
+            "localDir": "resources",
+            "authenticationType": "xsuaa",
+            "scope": "$XSAPPNAME.Viewer"
         }
     ]
 }

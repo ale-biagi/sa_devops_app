@@ -62,7 +62,7 @@ modules:
       - name: srv-api
         group: destinations
         properties:
-          name: srv
+          name: srv-api
           url: ~{srv-url}
           timeout: 60000
           forwardAuthToken: true
